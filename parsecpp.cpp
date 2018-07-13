@@ -53,6 +53,10 @@ public:
     bool operator!=(const Source &src) const {
         return !(*this == src);
     }
+    friend std::ostream& operator << (std::ostream& cout, const Source& src) {
+        cout << src.s;
+        return cout;
+    }
 };
 
 template <typename T>

@@ -46,16 +46,14 @@ Parser<int> factor_ = spaces
                    << spaces;
 
 int main() {
-    parseTest(number, "123"          );
-    parseTest(expr  , "1 + 2"        );
-    parseTest(expr  , "123"          );
-    parseTest(expr  , "1 + 2 + 3"    );
-    parseTest(expr  , "1 - 2 - 3"    );
-    parseTest(expr  , "1 - 2 + 3"    );
-    parseTest(expr  , "2 * 3 + 4"    );
-    parseTest(expr  , "2 + 3 * 4"    );
-    parseTest(expr  , "100 / 10 / 2" );
-    parseTest(expr  , "( 2 + 3 ) * 4");
+
+    std::string str;
+    getline(std::cin, str);
+
+    Source src = str.c_str();
+    
+    std::cout << src << std::endl;
+    parseTest(expr, src);
 
     return 0;
 }
